@@ -16,6 +16,8 @@
         runAsRoot = false;
         # ovmf submodule REMOVED: All OVMF images are now available by default in nixpkgs-unstable
         swtpm.enable = true; # TPM emulation
+        vhostUserPackages = with pkgs; [ virtiofsd ];
+
         verbatimConfig = ''
           user = "qemu-libvirtd"
           group = "kvm"
