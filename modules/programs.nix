@@ -18,7 +18,8 @@
     yazi
     bat
     lsd
-   # obs-studio
+    # obs-studio
+    opencode
     wireguard-tools
  ];
 
