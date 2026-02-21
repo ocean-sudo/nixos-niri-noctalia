@@ -119,9 +119,15 @@ debug {
     honor-xdg-activation-with-invalid-serial
 }
 
-// Firefox 窗口规则
+// Browser 窗口规则
 window-rule {
-    match title="Firefox"
+    match title="Zen"
+    open-on-workspace "c"
+    open-maximized true
+}
+
+window-rule {
+    match title="qutebrowser"
     open-on-workspace "c"
     open-maximized true
 }
@@ -149,7 +155,7 @@ binds {
     Mod+Return hotkey-overlay-title="打开 (Kitty)" { spawn "kitty"; }
     Mod+T hotkey-overlay-title="打开 (Alacritty)" { spawn "alacritty"; }
     Mod+D hotkey-overlay-title="Fuzzel" { spawn-sh "fuzzel --config ~/.config/fuzzel/themes/noctalia"; }
-    Mod+B hotkey-overlay-title="firefox" { spawn "firefox"; }
+    Mod+B hotkey-overlay-title="zen" { spawn "browser"; }
     Mod+N hotkey-overlay-title="nautilus" { spawn "nautilus"; }
 
     // -------- Noctalia 特有绑定 --------

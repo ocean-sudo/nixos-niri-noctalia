@@ -18,6 +18,18 @@
 - 导入仓库中的nix配置文件
 - 重建系统
 
+#### 一行命令部署（新机）
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ocean-sudo/nixos-niri-noctalia/master/scripts/bootstrap.sh | sudo bash
+```
+
+可选：同步仓库内 `dotfiles/` 到当前 sudo 用户家目录
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ocean-sudo/nixos-niri-noctalia/master/scripts/bootstrap.sh | sudo env SYNC_DOTFILES=1 bash
+```
+
 #### 目录结构
 
 ```bash
