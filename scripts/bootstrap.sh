@@ -71,6 +71,11 @@ fi
 nixos-generate-config --show-hardware-config > "$TARGET_DIR/hardware-configuration.nix"
 log "已生成本机 hardware-configuration.nix"
 
+if [[ -d "$TARGET_DIR/.git" ]]; then
+  # flake in git mode will ignore untracked files; ensure generated hardware config is tracked.
+  run_git -C "$TARGET_DIR" add hardware-configuration.nix
+fi
+
 if [[ "$SYNC_DOTFILES" == "1" && -n "$TARGET_USER" ]]; then
   user_home="$(getent passwd "$TARGET_USER" | cut -d: -f6 || true)"
   if [[ -z "$user_home" || ! -d "$user_home" ]]; then
